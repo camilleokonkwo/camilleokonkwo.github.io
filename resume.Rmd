@@ -1,0 +1,68 @@
+---
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+### EDUCATION
+
+**Columbia University**   New York, NY
+
+* Masters of Public Health: Sociomedical Science & Public Health Data Science
+
+* Cumulative GPA: 4.0
+
+
+**William & Mary**     Williamsburg, VA
+
+  * Bachelor of Science: Public Health
+  
+  * Major GPA: 3.65
+
+### RELEVANT EXPERIENCE
+
+**Research Assistant**, Columbia University   June 2023 - Present
+
+**Associate QC Scientist**, ThermoFisher Scientific, Richmond, VA	June 2021 – June 2023
+
+* Evaluates over 250 sample laboratory assay results for completeness and accuracy weekly, decreasing quality assurance audit events
+
+**Intern**, Community of Faith Mission, Williamsburg, VA	November 2020 – Present
+
+*	Successfully increased awareness of services by effectively utilizing social media and distributing over 2,000 publications to local businesses 
+
+*	Supervises shelter operations overnight one day a week resulting in efficient execution of the mission and compassionate problem solving addressing residential conflicts
+
+*	Maintains shelter stock supplies to ensure efficient shelter operation
+
+*	Recorded over 3,700 volunteer hours for effective grant proposal writings
+
+* Organized volunteer underwear outreach program, collecting 800 pairs of underwear to distribute to guests of the shelter
+
+**Diversity and Inclusion Chair**, Kappa Kappa Gamma, William & Mary 	October 2019 – November 2020
+
+* Lead and created regular diversity and inclusion trainings for the Gamma Kappa chapter, increasing awareness of privilege and socioeconomic and racial inequity
+
+* Created and followed a balanced budget ensuring the sorority stayed within financial means
+
+* Founded the inaugural Panhellenic DEI committee with the goal of becoming a resource for Panhellenic organizations and connecting them to multicultural organizations	
+
+**Fall Fellow**, Democratic Party of Virginia, Richmond, VA	August 2015 – November 2015
+
+*	Organized three speaking events and weekly canvassing campaigns resulting in registering 1,050 new voters, especially targeting historically disenfranchised communities
+
+* Demonstrated strong organizational skills by arranging phone banks, volunteer recruitment events, and canvass events for one-time volunteers 
+
+
+### SKILLS
+
+* <u>Software</u>: RStudio, SQL, Redcap, SAS Studio, Tableau, Atlas.ti, NVivo, SPSS
+
+
+* <u>Activities</u>: **Member**; New York Public Health Association, **Volunteer**; Virginia Medical Reserve Corps, **Biology Teaching Assistant**, William & Mary
+
+
+
