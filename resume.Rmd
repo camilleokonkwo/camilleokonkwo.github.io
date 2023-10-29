@@ -11,26 +11,26 @@ output:
 
 **Columbia University**   New York, NY
 
-* Masters of Public Health: Sociomedical Science & Public Health Data Science
+* <u>Masters of Public Health</u>: Sociomedical Science & Public Health Data Science
 
-* Cumulative GPA: 4.0
+* <u>Cumulative GPA</u>: 4.1
 
 
 **William & Mary**     Williamsburg, VA
 
-  * Bachelor of Science: Public Health
+  * <u>Bachelor of Science</u>: Public Health
   
-  * Major GPA: 3.65
+  * <u>Major GPA</u>: 3.65
 
 ### RELEVANT EXPERIENCE
 
-**Research Assistant**, Columbia University   June 2023 - Present
+**Research Assistant**, Columbia University                               June 2023 - Present
 
 **Associate QC Scientist**, ThermoFisher Scientific, Richmond, VA	June 2021 – June 2023
 
 * Evaluates over 250 sample laboratory assay results for completeness and accuracy weekly, decreasing quality assurance audit events
 
-**Intern**, Community of Faith Mission, Williamsburg, VA	November 2020 – Present
+**Intern**, Community of Faith Mission, Williamsburg, VA	                November 2020 – Present
 
 *	Successfully increased awareness of services by effectively utilizing social media and distributing over 2,000 publications to local businesses 
 
@@ -42,7 +42,7 @@ output:
 
 * Organized volunteer underwear outreach program, collecting 800 pairs of underwear to distribute to guests of the shelter
 
-**Diversity and Inclusion Chair**, Kappa Kappa Gamma, William & Mary 	October 2019 – November 2020
+**Diversity and Inclusion Chair**, Kappa Kappa Gamma, William & Mary        October 2019 – November 2020
 
 * Lead and created regular diversity and inclusion trainings for the Gamma Kappa chapter, increasing awareness of privilege and socioeconomic and racial inequity
 
@@ -50,14 +50,14 @@ output:
 
 * Founded the inaugural Panhellenic DEI committee with the goal of becoming a resource for Panhellenic organizations and connecting them to multicultural organizations	
 
-**Fall Fellow**, Democratic Party of Virginia, Richmond, VA	August 2015 – November 2015
+**Fall Fellow**, Democratic Party of Virginia, Richmond, VA	                August 2015 – November 2015
 
 *	Organized three speaking events and weekly canvassing campaigns resulting in registering 1,050 new voters, especially targeting historically disenfranchised communities
 
 * Demonstrated strong organizational skills by arranging phone banks, volunteer recruitment events, and canvass events for one-time volunteers 
 
 
-### SKILLS
+### SKILLS & ACTIVITIES
 
 * <u>Software</u>: RStudio, SQL, Redcap, SAS Studio, Tableau, Atlas.ti, NVivo, SPSS
 
