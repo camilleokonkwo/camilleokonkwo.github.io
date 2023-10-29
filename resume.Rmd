@@ -15,6 +15,18 @@ output:
 
 * <u>Cumulative GPA</u>: 4.1
 
+* <u>Relevant Courses</u>:
+
+  - Data Vizualization in Tablueau
+  
+  - Applied Regression I & II
+  
+  - Data Science
+  
+  - Relational Databases and Programming
+
+  - Statistical Computing with SAS
+
 
 **William & Mary**     Williamsburg, VA
 
