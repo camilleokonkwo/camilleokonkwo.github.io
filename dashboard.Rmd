@@ -1,0 +1,64 @@
+---
+title: "Flexdashboard for p8105_hw4_co2554"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+library(viridis)
+
+data("ny_noaa")
+
+ny_noaa =
+  ny_noaa |>
+  mutate(name = recode(id, 
+                      "USW00094728" = "Central_Park", 
+                      "USW00014733" = "Buffalo",
+                      "USC00308746" = "Tupper_Lake_Sunmount"), 
+         tmin = as.numeric(tmin) / 10, 
+         tmax = as.numeric(tmax) / 10) |>
+  filter(year(date) == 1999,
+         name %in% c("Central_Park", "Buffalo", "Tupper_Lake_Sunmount"),
+         if_all(c(prcp, snow, snwd, tmax, tmin), ~!is.na(.))) |>
+  select(name, date, prcp, snow, snwd, tmax, tmin)
+
+```
+
+This is my flex dashboard! :) 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Density Plot
+
+```{r density, message = FALSE}
+plot_ly(ny_noaa, x = ~tmax, color = ~name, colors = viridis(3), type = "histogram", histnorm = "probability density") |> 
+  layout(
+    xaxis = list(title = "Max Temperature (°C)"),
+    yaxis = list(title = "Density"),
+    title = "Density Distribution of Max Temp (tmax) in 1999",
+    showlegend = TRUE
+  )
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+

@@ -1,0 +1,55 @@
+---
+title: "Plot.ly for p8105_hw4_co2554"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+### Problem 2
+
+Lets make some graphs using `plot.ly` and the `p8105.datasets` package:
+
+```{r setup, message = FALSE}
+library(tidyverse)
+library(plotly)
+library(viridis)
+
+library(p8105.datasets)
+```
+
+I'll be using the `ny_noaa` dataset to create my graphs and flexdashboard. I'm curious to see what the weather was like in three different regions of New York the year I was born.
+
+First, let's make a time series line plot of precipitation in Central Park (Manhattan), Buffalo, and in a smaller city, Tupper Lake Sunmount.
+
+```{r nydat}
+data("ny_noaa")
+
+ny_noaa =
+  ny_noaa |>
+  mutate(name = recode(id, 
+                      "USW00094728" = "Central_Park", 
+                      "USW00014733" = "Buffalo",
+                      "USC00308746" = "Tupper_Lake_Sunmount"), 
+         tmin = as.numeric(tmin) / 10, 
+         tmax = as.numeric(tmax) / 10) |>
+  filter(year(date) == 1999,
+         name %in% c("Central_Park", "Buffalo", "Tupper_Lake_Sunmount"),
+         if_all(c(prcp, snow, snwd, tmax, tmin), ~!is.na(.))) |>
+  select(name, date, prcp, snow, snwd, tmax, tmin)
+```
+
+
+Let's compare the distibution of temperature high's in Central Park, Buffalo, and Tupper Lake Sunmount using a density plot.
+```{r density}
+plot_ly(ny_noaa, x = ~tmax, color = ~name, colors = viridis(3), type = "histogram", histnorm = "probability density") |> 
+  layout(
+    xaxis = list(title = "Max Temperature (°C)"),
+    yaxis = list(title = "Density"),
+    title = "Density Distribution of Max Temp (tmax) in 1999",
+    showlegend = TRUE
+  )
+```
+  
+In 1999, it appears that in Buffalo, Central Park, and Tupper Lake Summit, `tmax` is left-skewed, with the average peaks for all three being roughly between 20 - 25 celcius. It makes sense that Central Park has the most variation in max temperature and has higher `tmax` averages, since its the most southern-lying city we are comparing in the state. 
+

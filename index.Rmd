@@ -11,6 +11,8 @@ output:
 # Welcome!
 
 
-My name is Camille Okonkwo. I am a second-year Sociomedical Sciences and Biostatistics & Public Health Data Science MPH Candidate at [Columbia University](https://www.publichealth.columbia.edu/). Before my time in New York, I recieved a B.S. in Public Health from my alma mater, [William & Mary](https://www.wm.edu/). I am currently seeking out Data Scientist and Public Health Analyst roles upon my graduation in May 2024. For more information on my background, check out my [resume](resume.html).
+My name is Camille Okonkwo. I am a second-year Sociomedical Sciences + Biostatistics & Public Health Data Science MPH Candidate at [Columbia University](https://www.publichealth.columbia.edu/). Before my time in New York, I recieved a B.S. in Public Health from my alma mater, [William & Mary](https://www.wm.edu/). I am currently seeking out Data Scientist and Public Health Analyst roles upon my graduation in May 2024. For more information on my background, check out my [resume](resume.html).
 
 ![](images/graduation.JPG)
+
+If you are here from P8105 and looking for my homework 4, check my [plotly](plotly.html) graphs and my [flex dashboard](dashboard.html) here. 
