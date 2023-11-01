@@ -18,10 +18,9 @@ library(viridis)
 library(p8105.datasets)
 ```
 
-I'll be using the `ny_noaa` dataset to create my graphs and flexdashboard. I'm curious to see what the weather was like in three different regions of New York the year I was born.
+I'll be using the `ny_noaa` dataset to create my graphs and flexdashboard. I'm curious to see what the weather was like in three different regions of New York in 2005.
 
-First, let's make a time series line plot of precipitation in Central Park (Manhattan), Buffalo, and in a smaller city, Tupper Lake Sunmount.
-
+First, let's clean up our data.
 ```{r nydat}
 data("ny_noaa")
 
@@ -32,24 +31,62 @@ ny_noaa =
                       "USW00014733" = "Buffalo",
                       "USC00308746" = "Tupper_Lake_Sunmount"), 
          tmin = as.numeric(tmin) / 10, 
-         tmax = as.numeric(tmax) / 10) |>
-  filter(year(date) == 1999,
+         tmax = as.numeric(tmax) / 10, 
+         prcp = (prcp) / 10) |>
+  filter(
+         year(date) == 2005,
          name %in% c("Central_Park", "Buffalo", "Tupper_Lake_Sunmount"),
          if_all(c(prcp, snow, snwd, tmax, tmin), ~!is.na(.))) |>
   select(name, date, prcp, snow, snwd, tmax, tmin)
 ```
 
+Now, let's compare the distribution of temperature in Central Park (Manhattan), Buffalo, and Tupper Lake Sunmount using a density plot.
 
-Let's compare the distibution of temperature high's in Central Park, Buffalo, and Tupper Lake Sunmount using a density plot.
 ```{r density}
-plot_ly(ny_noaa, x = ~tmax, color = ~name, colors = viridis(3), type = "histogram", histnorm = "probability density") |> 
+ny_noaa |>
+  select(name, tmax, tmin) |> 
+  pivot_longer(
+    tmax:tmin,
+    names_to = "observation",
+    values_to = "temp") |> 
+plot_ly(x = ~temp, color = ~name, colors = viridis(3), type = "histogram", histnorm = "probability density") |> 
   layout(
-    xaxis = list(title = "Max Temperature (°C)"),
+    xaxis = list(title = "Temperature (°C)"),
     yaxis = list(title = "Density"),
-    title = "Density Distribution of Max Temp (tmax) in 1999",
+    title = "Distribution of Temperature (2005)",
     showlegend = TRUE
   )
 ```
-  
-In 1999, it appears that in Buffalo, Central Park, and Tupper Lake Summit, `tmax` is left-skewed, with the average peaks for all three being roughly between 20 - 25 celcius. It makes sense that Central Park has the most variation in max temperature and has higher `tmax` averages, since its the most southern-lying city we are comparing in the state. 
+
+Since Central Park runs a bit warmer than the two, I'm interested to see if there's more precipitation here.
+
+```{r precipation}
+ny_noaa |> 
+  select(name, prcp, snow) |> 
+  plot_ly(x = ~name) |> 
+  add_bars(y = ~prcp, name = "Rainfall", marker = list(color = ~viridisLite::viridis(2)[1])) |> 
+  add_bars(y = ~snow, name = "Snowfall", marker = list(color = ~viridisLite::viridis(2)[2])) |> 
+  layout(
+    title = "Annual Precipitation (2005)",
+    xaxis = list(
+      title = "Location"),
+    yaxis = list(title = "Amount (mm)"),
+    barmode = "group"
+  )
+```
+
+Buffalo gets a lot of snow, and I'm not surprised that Central Park has the largest annual rainfall. I wonder what the correlation is between `snow` and `snowd`. Let's make a scatter plot.
+
+
+```{r scatter}
+ny_noaa |>
+  select(snow, snwd, name) |>
+  plot_ly(x = ~snow, y = ~snwd, color = ~name, type = "scatter", mode = "markers", colors = "viridis" ) |>
+  layout(
+    title = "Snow vs. Snow Depth (2005)",
+    xaxis = list(title = "Snowfall (mm)"),
+    yaxis = list(title = "Snow Depth (mm)"),
+    showlegend = TRUE)
+
+```
 

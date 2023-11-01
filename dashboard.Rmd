@@ -22,8 +22,11 @@ ny_noaa =
                       "USW00014733" = "Buffalo",
                       "USC00308746" = "Tupper_Lake_Sunmount"), 
          tmin = as.numeric(tmin) / 10, 
-         tmax = as.numeric(tmax) / 10) |>
-  filter(year(date) == 1999,
+         tmax = as.numeric(tmax) / 10, 
+         prcp = (prcp) / 10
+         ) |>
+  filter(
+         year(date) == 2005,
          name %in% c("Central_Park", "Buffalo", "Tupper_Lake_Sunmount"),
          if_all(c(prcp, snow, snwd, tmax, tmin), ~!is.na(.))) |>
   select(name, date, prcp, snow, snwd, tmax, tmin)
@@ -38,11 +41,17 @@ Column {data-width=650}
 ### Density Plot
 
 ```{r density, message = FALSE}
-plot_ly(ny_noaa, x = ~tmax, color = ~name, colors = viridis(3), type = "histogram", histnorm = "probability density") |> 
+ny_noaa |>
+  select(name, tmax, tmin) |> 
+  pivot_longer(
+    tmax:tmin,
+    names_to = "observation",
+    values_to = "temp") |> 
+plot_ly(x = ~temp, color = ~name, colors = viridis(3), type = "histogram", histnorm = "probability density") |> 
   layout(
-    xaxis = list(title = "Max Temperature (°C)"),
+    xaxis = list(title = "Temperature (°C)"),
     yaxis = list(title = "Density"),
-    title = "Density Distribution of Max Temp (tmax) in 1999",
+    title = "Distribution of Temperature (2005)",
     showlegend = TRUE
   )
 ```
@@ -50,15 +59,33 @@ plot_ly(ny_noaa, x = ~tmax, color = ~name, colors = viridis(3), type = "histogra
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Precipitation Plot
 
-```{r}
-
+```{r precipitation, message = FALSE}
+ny_noaa |> 
+  select(name, prcp, snow) |> 
+  plot_ly(x = ~name) |> 
+  add_bars(y = ~prcp, name = "Rainfall", marker = list(color = ~viridisLite::viridis(2)[1])) |> 
+  add_bars(y = ~snow, name = "Snowfall", marker = list(color = ~viridisLite::viridis(2)[2])) |> 
+  layout(
+    title = "Annual Precipitation (2005)",
+    xaxis = list(
+      title = "Location"),
+    yaxis = list(title = "Amount (mm)"),
+    barmode = "group"
+  )
 ```
 
-### Chart C
+### Scatterplot
 
-```{r}
-
+```{r scatter, message = FALSE}
+ny_noaa |>
+  select(snow, snwd, name) |>
+  plot_ly(x = ~snow, y = ~snwd, color = ~name, type = "scatter", mode = "markers", colors = "viridis" ) |>
+  layout(
+    title = "Snow vs. Snow Depth (2005)",
+    xaxis = list(title = "Snowfall (mm)"),
+    yaxis = list(title = "Snow Depth (mm)"),
+    showlegend = TRUE)
 ```
 
