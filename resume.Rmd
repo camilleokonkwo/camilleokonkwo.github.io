@@ -17,13 +17,13 @@ output:
 
 * <u>Relevant Courses</u>:
 
-  - Data Vizualization in Tablueau
+  - Data Visualization in Tableau
   
   - Applied Regression I & II
   
-  - Data Science
+  - Data Science I & II
   
-  - Relational Databases and Programming
+  - Relational Databases and SQL Programming
 
   - Statistical Computing with SAS
 
@@ -36,8 +36,20 @@ output:
 
 ### RELEVANT EXPERIENCE
 
-**Research Assistant**, Columbia University                               June 2023 - Present
+**Research Assistant**, RARBP Study,  Columbia University                               June 2023 - Present
 
+ * Under the supervision of Prof. Nour Makarem, PhD in the Epidemiology Department
+ 
+ * Responsible for study recruitment, data collection and processing of findings
+
+  - BS-1 level blood centrifuging
+ 
+  - RedCap data entry of sensitive participant information
+ 
+  - Data analysis of findings using SAS and RStudio
+
+  - Data Visualization in Tableau
+  
 **Associate QC Scientist**, ThermoFisher Scientific, Richmond, VA	June 2021 – June 2023
 
 * Evaluates over 250 sample laboratory assay results for completeness and accuracy weekly, decreasing quality assurance audit events
@@ -71,10 +83,7 @@ output:
 
 ### SKILLS & ACTIVITIES
 
-* <u>Software</u>: RStudio, SQL, Redcap, SAS Studio, Tableau, Atlas.ti, NVivo, SPSS
+* <u>Softwares</u>: RStudio, SQL, Redcap, SAS Studio, Tableau, Atlas.ti, NVivo, SPSS
 
 
 * <u>Activities</u>: **Member**; New York Public Health Association, **Volunteer**; Virginia Medical Reserve Corps, **Biology Teaching Assistant**, William & Mary
-
-
-

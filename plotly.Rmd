@@ -60,7 +60,7 @@ plot_ly(x = ~temp, color = ~name, colors = viridis(3), type = "histogram", histn
 
 Since Central Park runs a bit warmer than the two, I'm interested to see if there's more precipitation here.
 
-```{r precipation}
+```{r precipitation}
 ny_noaa |> 
   select(name, prcp, snow) |> 
   plot_ly(x = ~name) |> 
