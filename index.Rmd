@@ -6,7 +6,7 @@ output:
     toc_float: true
     theme: simplex
 ---
-
+# Welcome!
 ![](images/headshot.jpg)
 
 My name is Camille Okonkwo. I am a Sociomedical Sciences + Biostatistics & Public Health Data Science MPH graduate from [Columbia University](https://www.publichealth.columbia.edu/). Before my time in New York, I received a B.S. in Public Health from [William & Mary](https://www.wm.edu/). I am currently seeking out Data Scientist and Public Health Analyst roles upon graduation in May 2024. For more information on my background, check out my [resume](resume.html).

@@ -10,7 +10,7 @@ navbar:
     - text: "Dashboard"
       href: dashboard.html      
     - icon: fa-envelope fa-lg
-      href: mailto:camille.okonkwo@columbia.edu
+      href: mailto:co2554@caa.columbia.edu
     - icon: fa-github fa-lg
       href: http://github.com/camilleokonkwo/
     - icon: fab fa-linkedin
